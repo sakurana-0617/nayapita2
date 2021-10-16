@@ -1,0 +1,519 @@
+@charset "UTF-8";
+
+html {
+    overflow-y: scroll;
+}
+
+/* リセットCSSの記述です。コピペしていただいて構いません。----- */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.4;
+    min-width: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    outline: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    border: 0px;
+    vertical-align: bottom;
+}
+
+/* --------------------------------------------------- */
+html {
+    /* height: 100%; */
+    width: 100%;
+}
+
+body {
+    background-image: url(../img/background2.png);
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    color: #552518b9;
+    height: 100%;
+    margin-top: 18px;
+}
+
+.wrapper {
+    background-image: url(../img/background2.png);
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    box-sizing: border-box;
+}
+
+
+
+header {
+    height: 60px;
+    width: 100%;
+    background-color: #76b6d4;
+    text-align: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+}
+
+header ul {
+    height: 60px;
+    margin: auto;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.13);
+}
+
+header li {
+    color: #ffffff;
+    width: 20%;
+    line-height: 60px;
+    transition: 0.2s;
+    text-align: center;
+    text-shadow: 0 5px 5px black;
+}
+
+header img {
+    width: 60px;
+    height: 60px;
+}
+
+.app_name {
+    color: #ffffff;
+    width: 50%;
+    line-height: 60px;
+    transition: 0.2s;
+    text-align: left;
+    text-shadow: none;
+}
+
+/* 
+.coment {
+    width: 90%;
+    border-radius: 70% 70% 70% 70%;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+
+} */
+
+.button_start {
+    border-radius: 55% 55% 55% 55%;
+    background-color: #fff;
+    font-size: 36px;
+    font-weight: 400;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.527);
+}
+
+.azarashi {
+    width: 30%;
+    height: 30%;
+    transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+}
+
+.footer_fixed {
+    min-height: 100vh;
+    /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
+    position: relative;
+    /* ←相対位置 */
+    padding-bottom: 60px;
+    /* ←フッターの高さを指定 */
+    box-sizing: border-box;
+    /* ↑ヘッダーやフッターを含むすべての要素の高さ＝min-height:100vhになるように指定 */
+}
+
+footer {
+    background-color: #76b6d4;
+    height: 30px;
+    text-align: center;
+    left: 0;
+    line-height: 1;
+    bottom: 0;
+    /*下に固定*/
+    width: 100%;
+    position: absolute;
+    /* ←絶対位置 */
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer_content {
+    height: 30px;
+    padding: 2px 0;
+}
+
+img.footer_img_size {
+    height: 30px;
+    width: 30px;
+}
+
+.footer_img {
+    height: 30px;
+    width: 5%;
+    text-align: left;
+    margin: 0 10px;
+}
+
+.footer_text {
+    height: 30px;
+    width: 95%;
+    text-align: center;
+}
+
+
+
+ul.list-group {
+    padding: 0;
+    position: relative;
+}
+
+ul li.list-group-item {
+    line-height: 1.5;
+    padding: 0.5em 0.5em 0.5em 1.7em;
+    /* list-style-type: none !important; */
+    background: -webkit-linear-gradient(top, skyblue 0%, #5aade6 100%);
+    /*グラデーション*/
+    background: linear-gradient(to bottom, skyblue 0%, #5aade6 100%);
+    /*グラデーション*/
+    color: #fff;
+}
+
+.button_main {
+    width: 300px;
+    line-height: 1.5;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+
+    background: -webkit-linear-gradient(top, skyblue 0%, #5aade6 100%);
+    /*グラデーション*/
+    background: linear-gradient(to bottom, skyblue 0%, #5aade6 100%);
+    /*グラデーション*/
+    color: #fff;
+
+}
+
+
+
+.top_text {
+    font-size: 20px;
+}
+
+.box23 {
+    position: relative;
+    margin: 16px 0 4px 40px;
+    padding: 8px 15px;
+    background: #fff;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.box23:before {
+    font-family: FontAwesome;
+    content: "●";
+    position: absolute;
+    font-size: 15px;
+    left: -40px;
+    bottom: 0;
+    color: #fff;
+}
+
+.box23:after {
+    font-family: FontAwesome;
+    content: "●";
+    position: absolute;
+    font-size: 23px;
+    left: -23px;
+    bottom: 0;
+    color: #fff;
+}
+
+.box23 p {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.background_sec {
+    background-image: url(../img/background2.png);
+}
+
+.url_twitter {
+    width: 18px;
+    height: 18px;
+}
+
+ul.url_twitter {
+    height: 20px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+ul li.twitter_content {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    line-height: 20px;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.img_box {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 32px;
+}
+
+#kurage {
+    height: 100%;
+    width: 110px;
+    margin: 0 30%;
+}
+
+.img_box2 {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#azarashi {
+    height: 100%;
+    width: 110px;
+    margin: 0 30%;
+}
+
+.form_box {
+    height: 52px;
+    width: 100%;
+    margin-bottom: 36px;
+}
+
+
+table.box_table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#QR_button {
+    margin: 16px auto 0px auto;
+}
+
+canvas {
+    height: 80px;
+    width: 80px;
+}
+
+
+
+
+/* -------------------------css アニメーション------------------------------------- */
+.purupuru {
+    -webkit-animation: purupuru 0.8s linear 0s 1;
+    animation: purupuru 0.8s linear 0s 1;
+}
+
+@-webkit-keyframes purupuru {
+    0% {
+        -webkit-transform: scale(1.0, 1.0) translate(0%, 0%);
+    }
+
+    20% {
+        -webkit-transform: scale(1.0, 1.06) translate(-5%, -4%) skew(6deg, 0deg);
+    }
+
+    50% {
+        -webkit-transform: scale(1.0, 0.94) translate(5%, 4%) skew(-6deg, 0deg);
+    }
+
+    65% {
+        -webkit-transform: scale(1.0, 1.03) translate(2%, -2%) skew(-3deg, 0deg);
+    }
+
+    80% {
+        -webkit-transform: scale(1.0, 0.97) translate(-2%, 2%) skew(3deg, 0deg);
+    }
+
+    100% {
+        -webkit-transform: scale(1.0, 1.0) translate(0%, 0%);
+    }
+}
+
+@keyframes purupuru {
+    0% {
+        transform: scale(1.0, 1.0) translate(0%, 0%);
+    }
+
+    20% {
+        transform: scale(1.0, 1.06) translate(-5%, -4%) skew(6deg, 0deg);
+    }
+
+    50% {
+        transform: scale(1.0, 0.94) translate(5%, 4%) skew(-6deg, 0deg);
+    }
+
+    65% {
+        transform: scale(1.0, 1.03) translate(2%, -2%) skew(-3deg, 0deg);
+    }
+
+    80% {
+        transform: scale(1.0, 0.97) translate(-2%, 2%) skew(3deg, 0deg);
+    }
+
+    100% {
+        transform: scale(1.0, 1.0) translate(0%, 0%);
+    }
+}
+
+
+.purupuru {
+
+    animation: purupuru 1.2s linear 0.8s infinite;
+
+}
+
+
+
+.korokoro {
+    -webkit-animation: korokoro 2.5s linear 0s 1;
+    animation: korokoro 2.5s linear 0s 1;
+}
+
+@-webkit-keyframes korokoro {
+    0% {
+        -webkit-transform: translate(0%, 0%);
+    }
+
+    5% {
+        -webkit-transform: translate(10%, 0%) rotate(10deg);
+    }
+
+    25% {
+        -webkit-transform: translate(20%, 0%) rotate(20deg);
+    }
+
+    30% {
+        -webkit-transform: translate(-10%, 0%) rotate(-10deg);
+    }
+
+    35% {
+        -webkit-transform: translate(-15%, 0%) rotate(-15deg);
+    }
+
+    45% {
+        -webkit-transform: translate(10%, 0%) rotate(10deg);
+    }
+
+    50% {
+        -webkit-transform: translate(15%, 0%) rotate(15deg);
+    }
+
+    60% {
+        -webkit-transform: translate(-5%, 0%) rotate(-5deg);
+    }
+
+    65% {
+        -webkit-transform: translate(-7%, 0%) rotate(-7deg);
+    }
+
+    75% {
+        -webkit-transform: translate(0%, 0%) rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: translate(0%, 0%) rotate(0deg);
+    }
+}
+
+@keyframes korokoro {
+    0% {
+        transform: translate(0%, 0%);
+    }
+
+    5% {
+        transform: translate(10%, 0%) rotate(10deg);
+    }
+
+    25% {
+        transform: translate(20%, 0%) rotate(20deg);
+    }
+
+    30% {
+        transform: translate(-10%, 0%) rotate(-10deg);
+    }
+
+    35% {
+        transform: translate(-15%, 0%) rotate(-15deg);
+    }
+
+    45% {
+        transform: translate(10%, 0%) rotate(10deg);
+    }
+
+    50% {
+        transform: translate(15%, 0%) rotate(15deg);
+    }
+
+    60% {
+        transform: translate(-5%, 0%) rotate(-5deg);
+    }
+
+    65% {
+        transform: translate(-7%, 0%) rotate(-7deg);
+    }
+
+    75% {
+        transform: translate(0%, 0%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0%, 0%) rotate(0deg);
+    }
+}
+
+.korokoro {
+
+    animation: korokoro 2.0s linear 1.5s infinite;
+
+}
+
+/* ----------------------------------------------------------- */

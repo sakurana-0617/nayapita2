@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="icon" href="../static/img/kurage.ico">
+    <title>なやみぴたっと</title>
+</head>
+
+<body>
+    <section class="wrapper footer_fixed">
+
+        <header>
+        <ul> 
+            <li  class="app_name" id="HomeButton" type="button"><img  src="../static/img/azarashi.png" alt=""><a href="/">なやみぴたっと</a></li>
+            <li><a href="#sec1">About</a></li>
+            <li><a href="#sec2">BookPost</a></li>
+        </ul>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="coment">
+            <br>
+            <h1>「なやみぴたっと」へようこそ！</h1>
+            <h2><br>本好きな人からのおすすめの本に出会おう！</h2>
+            <!-- <p class="box23" >ようこそ！<br>
+            ここにキャラと説明</p> -->
+            <br>
+            <br>
+        </div>
+        <br>
+        <img  class="azarashi" src="../static/img/azarashi.png" alt="">
+        <br>
+        <div>
+            <br>
+        <a id="sec1" href="/main" class="button_start ">START</a>
+            <br>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="coment">
+            <br>
+            <h2  >・About・</h2>
+            <h3><br>このアプリでは本好きな人からの悩みに合わせた本をおすすめします。
+                <br>今まで出会ったことのない新しい本に出会うことができます。
+            </h3>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div  class="coment">
+            <h2>・Book Post・</h2>
+            <p id="sec2" class="box23">あなたのおススメの本を教えて</p>
+            <div class="img_box2">
+                <div class="azarashi_img">
+                    <img src="../static/img/azarashi.png" alt="" id="azarashi" class="korokoro">
+                </div>
+            </div>  
+            <ul class="url_twitter"> 
+                <li class="twitter_content"><a href="https://docs.google.com/forms/d/e/1FAIpQLScW1iq3U9rSxV0nv47Ltwjo-FUqT1cifA2VsoS6e7o9aztVyQ/viewform">フォームへ</a></li>
+            </ul>  
+            
+            
+        </div>
+    <br><br><br>
+        <div  class="coment">
+            <h2>・豆知識・</h2>
+            <p class="box23">{{fun_comment}}</p>
+        </div>
+        <div class="img_box">
+            <div class="kurage_img">
+                <img src="../static/img/kurage.png" alt="" id="kurage" class="purupuru">
+            </div>
+        </div>
+        <br>
+        <br>
+        <footer>
+            <div class="footer_img">
+                <div class="footer_img_box" ><img  src="../static/img/kurage.png" alt="" id="footer_img" class="footer_img_size"></div>
+            </div>
+            <div class="footer_text">
+                <div class="footer_text_box">© 2021 なやみぴたっと</div>
+            </div>
+        </footer> 
+    </section>
+
+</body>
+
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" > </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="../static/js/common.js"></script>
+</html>

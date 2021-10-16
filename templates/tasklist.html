@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本のメンテナンスモード</title>
+</head>
+<body>
+<table border>
+{% for book in task_list %}
+    <tr><td>{{book["book_ID"]}}</td>
+        <td>{{book["err_msg"]}}</td>
+        <td>{{book["store"]}}</td>
+        <td>{{book["staff"]}}</td>
+        <td>{{book["comment"]}}</td>
+        <td><img src="{{book['img_URL']}}" width="=50"></td>
+        <td>{{book["title"]}}</td>
+        <td>{{book["publisher"]}}</td>
+        <td>{{book["author"]}}</td>
+        <td>{{book["worry_ID"]}}</td>
+        <td>{{book["nayami"]}}</td>
+        <td><a href="../edit/{{book['book_ID']}}">編集</a></td>
+        <td><a href="../delete/{{book['book_ID']}}">削除</a></td></tr>
+{% endfor %}
+</table>
+</body>
+</html>

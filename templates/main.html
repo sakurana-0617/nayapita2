@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    
+
+    <br>
+    <br>
+    <div class="box23">
+    <span class="top_text">どちらかというとお悩みでないものを<br>あと</span><span class="top_text remain">５</span><span class="top_text">回クリックして消してね</span>
+    </div>
+    <br><br>
+    <div class="img_box2">
+        <div class="azarashi_img">
+            <img src="../static/img/azarashi.png" alt="" id="azarashi" class="korokoro">
+        </div>
+    </div>
+    <br>
+   
+    <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="bs-example">
+          <ul class="list-group">
+          
+            <li class="list-group-item click-item" value="0" title="">
+                お悩み  {{nayami[0]["worry"]}}
+            </li>
+            <li class="list-group-item click-item" value="1" title="">
+                お悩み  {{nayami[1]["worry"]}}
+            </li>
+            <li class="list-group-item click-item" value="2" title="">
+                お悩み  {{nayami[2]["worry"]}}
+            </li>
+            <li class="list-group-item click-item" value="3" title="">
+                お悩み  {{nayami[3]["worry"]}}
+            </li>
+            <li class="list-group-item click-item" value="4" title="">
+                お悩み  {{nayami[4]["worry"]}}
+            </li>
+            <li class="list-group-item click-item" value="5" title="">
+                お悩み  {{nayami[5]["worry"]}}
+            </li>
+            <li class="list-group-item click-item" value="6" title="">
+                お悩み  {{nayami[6]["worry"]}}
+            </li>
+            <li class="list-group-item click-item" value="7" title="">
+                お悩み  {{nayami[7]["worry"]}}
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <p id="info"></p>
+
+    </div><!-- /container -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        
+    function post(path, params, method='post') {
+
+// The rest of this code assumes you are not using a library.
+// It can be made less wordy if you use one.
+        const form = document.createElement('form');
+        form.method = method;
+        form.action = path;
+
+        for (const key in params) {
+        if (params.hasOwnProperty(key)) {
+            const hiddenField = document.createElement('input');
+            hiddenField.type = 'hidden';
+            hiddenField.name = key;
+            hiddenField.value = params[key];
+
+            form.appendChild(hiddenField);
+        }
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+        }
+    
+    var tsJqSwipeX = -1;
+    var tsJqSwipeY = -1;
+
+    console.log(tsJqSwipeY);
+
+    var count = 5;
+    var count2 = 3;
+    var js_nayami = [];
+    js_nayami={{nayami|tojson}};
+    var array = [];
+    var worry_FLAG=0;
+    for (let step = 0; step < 8; step++){
+        array.push([0,js_nayami[step].worry_ID]);
+    }
+    
+    $(function(){
+        for(let count3=3;count3<8;count3++){
+            $('li[value='+ count3 +']').hide();
+        }
+        // スワイプ処理
+        $(".click-item").bind("touchstart", function(){
+            tsJqSwipeX = event.changedTouches[0].pageX;
+            tsJqSwipeY = event.changedTouches[0].pageY;
+        });
+        $(".click-item").bind("touchend", function(){
+            tsJqSwipeX = -1;
+            flag = 0;
+        });
+        $(".click-item").on("click", function(){
+                // クリック時の処理
+                array[$(this).val()][0]=1;
+
+                $(this).css("background-color", "red");
+                $(this).slideUp("slow");
+                if(count>0){
+                    count--;
+                    $('.remain').text(count);
+                }
+                if(count==0){
+                    for (let step2 = 7; step2 >=0; step2--){
+                        if(array[step2][0]==0){
+                            worry_FLAG = step2;
+                        }
+                    }
+                    post("../test", {worry_ID:array[worry_FLAG][1]});
+                }
+                if(count>0){
+                $('li[value=' + count2 + ']').show();
+                count2 ++ ;
+                }
+            
+        });
+    });
+    
+    </script>
+    <script>
+        looopAnimation("azarashi", "korokoro", 100);
+    </script>
+
+
+{% endblock %}

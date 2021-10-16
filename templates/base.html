@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="icon" href="../static/img/azarashi 2.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YNQPQC7RT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7YNQPQC7RT');
+    </script>
+    <title>なやみぴたっと</title>
+</head>
+<body>
+    <section class="wrapper footer_fixed">
+        <header>
+            <ul> 
+                <li class="app_name" id="HomeButton" type="button"><img src="../static/img/azarashi.png" alt=""><a href="/">なやみぴたっと</a></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+        <footer class="footer_content">© 2021 なやみぴたっと</footer>
+    </section>
+</body>
+
+
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" > </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="../static/js/common.js"></script>
+</html>
